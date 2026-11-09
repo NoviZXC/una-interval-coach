@@ -1,0 +1,7 @@
+# b-lifecycle: close the simulator mid-rep. The log must show the service
+# staying for the active session when the GUI stops (QA.md B4).
+key 3 key 3 key 3 key 3          # -> GPS wait
+wait 6000
+key 3                            # start rep 1
+wait 4000
+quit

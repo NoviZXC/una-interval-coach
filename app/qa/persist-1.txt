@@ -1,0 +1,11 @@
+# b-persist step 1 (fresh settings): set 8 / 600 / 135 / 3:15, commit, quit.
+key 1 key 1                      # reps 6 -> 8
+key 3
+key 1 key 1                      # 400 -> 600 m
+key 3
+key 1 key 1 key 1                # 120 -> 135 bpm
+key 3
+key 1 key 1 key 1 key 1 key 1    # 2:00 -> 3:15
+key 3                            # -> GPS wait, saves
+wait 1000
+quit

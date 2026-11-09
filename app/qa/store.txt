@@ -1,0 +1,32 @@
+# C: store screenshots. Fresh settings: 6 x 200 m, HR 120, max rest 2:00.
+# Rests are cut short with R1 (skip) after 8 s, to keep the run short, except
+# the one photographed.
+wait 500
+shot c-01-setup
+key 3
+key 2 key 2                      # 400 -> 200 m
+key 3 key 3 key 3                # -> GPS wait
+wait 6000
+shot c-02-gps-ready
+key 3                            # rep 1
+until REST 120000
+wait 8000
+key 3                            # skip rest 1 -> rep 2
+until REST 120000
+wait 8000
+key 3                            # skip rest 2 -> rep 3
+wait 14000
+shot c-03-rep
+until REST 120000                # rep 3 done -> rest 3
+wait 8000
+shot c-04-rest
+key 3                            # skip -> rep 4
+until REST 120000
+wait 8000
+key 3                            # -> rep 5
+until REST 120000
+wait 8000
+key 3                            # -> rep 6
+until SUMMARY 120000
+shot c-05-summary
+quit

@@ -1,0 +1,26 @@
+{
+  "manifest_version": 1,
+  "type": [
+    "activity"
+  ],
+  "name": "Interval Coach",
+  "icon": "icon.png",
+  "binary": "IntervalCoach_1.0.0.uapp",
+  "appVersion": "1.0.0",
+  "minKernelVersion": "1.4.0",
+  "requiredHardware": [
+    "GPS",
+    "HR"
+  ],
+  "description": "Interval training on your wrist: set reps and rep distance, GPS measures each rep, the watch vibrates when you reach the distance, and again when your heart rate has come down and it is time to go. A summary of every rep and rest at the end.",
+  "id": "F0CCAAF704D314C4",
+  "supportsLaps": false,
+  "supportsDistance": false,
+  "supportsTrack": false,
+  "supportsHeartbeat": false,
+  "supportsElevation": false,
+  "supportsStep": false,
+  "supportsSpeed": "none",
+  "customMeasures": [],
+  "stravaExport": false
+}

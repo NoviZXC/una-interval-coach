@@ -1,0 +1,36 @@
+# b-faults: GPS loss > 10 s, HR never drops (MAX), HR missing (no HR), early end.
+# Run after session.txt (starts from 2 reps / 100 m / 120 / 0:30).
+key 1                            # reps 2 -> 3
+key 3
+key 1                            # 100 -> 200 m
+key 3 key 3 key 3                # -> GPS wait
+wait 6000
+key 3                            # start rep 1
+until REP 5000
+wait 3000
+key 6                            # QA: GPS off
+wait 12500
+shot f-gps-lost
+key 6                            # GPS back
+wait 2000
+key 8                            # QA: HR +60, rest cannot drop below 120
+until REST 120000                # rep 1 done
+wait 3000
+shot f-rest-high
+until REP 120000                 # rest ends at max 0:30 -> rep 2
+key 8                            # HR normal
+key 7                            # QA: HR off
+wait 3000
+shot f-rep-nohr
+until REST 120000                # rep 2 done -> rest without HR
+wait 3000
+shot f-rest-nohr
+until REP 120000                 # rest ends at max, "no HR" -> rep 3
+wait 3000
+key 4                            # end session?
+until CONFIRM_END 5000
+key 3                            # yes
+until SUMMARY 5000
+shot f-summary
+key 7                            # HR back
+quit

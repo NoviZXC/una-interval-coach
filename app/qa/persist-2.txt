@@ -1,0 +1,9 @@
+# b-persist step 2: after a restart, Setup shows the saved values.
+shot p-reps
+key 3
+shot p-distance
+key 3
+shot p-hr
+key 3
+shot p-rest
+quit

@@ -1,0 +1,6 @@
+build/
+build-host/
+Software/Apps/TouchGFX-GUI/screenshots/
+*.log
+qa/out/
+__pycache__/

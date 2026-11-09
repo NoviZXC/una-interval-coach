@@ -1,0 +1,5 @@
+# b-persist step 3: run with a corrupted settings.json; Setup shows defaults.
+shot p-corrupt-reps
+key 3
+shot p-corrupt-distance
+quit

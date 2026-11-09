@@ -1,0 +1,42 @@
+# b-session: B1/B2/B3 on every normal screen. Start with fresh settings.
+# 2 reps x 100 m, HR target 120, max rest 0:30.
+shot b-setup-reps
+key 2 key 2 key 2 key 2          # reps 6 -> 2
+key 3
+shot b-setup-distance
+key 2 key 2 key 2                # 400 -> 100 m
+key 3
+shot b-setup-hr
+key 3
+key 2 key 2 key 2 key 2 key 2 key 2   # max rest 2:00 -> 0:30
+shot b-setup-rest
+key 6                            # QA: GPS off, to see "searching"
+key 3                            # -> GPS wait (saves settings)
+wait 3000
+shot b-gps-wait
+key 3                            # no fix: must do nothing
+key 6                            # GPS back
+wait 3000
+shot b-gps-ready
+key 3                            # start rep 1
+until REP 5000
+wait 3000
+shot b-rep
+key 3                            # pause
+until PAUSED 5000
+wait 1000
+shot b-paused
+key 4                            # end session?
+until CONFIRM_END 5000
+shot b-confirm
+key 4                            # no, back to paused
+key 3                            # resume
+until REST 120000                # rep 1 done
+wait 3000
+shot b-rest
+until REP 120000                 # rest ends (HR or max 0:30)
+until SUMMARY 120000             # rep 2 done
+shot b-summary
+key 2                            # scroll down
+shot b-summary-scrolled
+quit
